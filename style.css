@@ -1,0 +1,49 @@
+:root{--bg:#f1f5ee;--panel:rgba(255,255,255,.72);--field:#f6f9f3;--ink:#13221a;--mute:#56675c;--line:rgba(19,34,26,.15);--brand:#1f5c45;--brand-ink:#fff;--mark:#f2b705;--glow:rgba(31,92,69,.2)}
+[data-theme=dark]{--bg:#0c1511;--panel:rgba(255,255,255,.055);--field:rgba(0,0,0,.28);--ink:#e8f1ea;--mute:#98aa9e;--line:rgba(255,255,255,.13);--brand:#f2b705;--brand-ink:#1a1405;--glow:rgba(242,183,5,.13)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:400 17px/1.6 "Bricolage Grotesque",system-ui,sans-serif;background:radial-gradient(900px 520px at 88% -8%,var(--glow),transparent),radial-gradient(700px 420px at -8% 12%,var(--glow),transparent),var(--bg);background-attachment:fixed;min-height:100vh}
+a{color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:5;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;letter-spacing:-.02em;text-decoration:none;margin-right:auto}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{text-decoration:none;padding:6px 12px;border-radius:999px;font-weight:600;font-size:.95rem;color:var(--mute)}
+nav a:hover,nav a[aria-current=page]{color:var(--ink);background:var(--panel);box-shadow:inset 0 0 0 1px var(--line)}
+.icon{font:inherit;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+h1{font-size:clamp(2.3rem,7vw,4rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:56px 0 14px;max-width:16ch}
+h2{font-size:1.5rem;letter-spacing:-.02em;margin:44px 0 12px}
+.lead{color:var(--mute);font-size:1.15rem;max-width:52ch;margin:0 0 30px}
+.crumbs{margin-top:26px;color:var(--mute);font-size:.9rem}
+.crumbs+h1{margin-top:10px;font-size:clamp(2rem,6vw,3rem)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;backdrop-filter:blur(8px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px}
+.tile{text-decoration:none;display:block;transition:transform .2s,border-color .2s}
+.tile:hover{transform:translateY(-3px);border-color:var(--mark)}
+.tile b{display:block;font-size:1.3rem;letter-spacing:-.02em;margin:10px 0 4px}
+.tile span{color:var(--mute);font-size:.97rem}
+.tile .glyph{font:800 1.6rem ui-monospace,Menlo,monospace;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--brand);color:var(--brand-ink)}
+textarea{width:100%;min-height:200px;font:inherit;color:inherit;background:var(--field);border:1px solid var(--line);border-radius:12px;padding:14px;resize:vertical}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--field);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:2rem;line-height:1.1}
+.stat span{color:var(--mute);font-size:.9rem}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;align-items:center}
+.act{font:inherit;font-weight:600;background:var(--brand);color:var(--brand-ink);border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+.act:hover{filter:brightness(1.1)}
+.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.pw{display:flex;gap:8px;align-items:stretch}
+.pw output{flex:1;font:600 1.25rem ui-monospace,Menlo,monospace;background:var(--field);border-radius:12px;padding:14px;overflow-wrap:anywhere;min-height:54px}
+.opt{display:inline-flex;gap:6px;align-items:center;margin-right:14px}
+.meter{height:8px;border-radius:4px;background:var(--line);margin:14px 0 6px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--mark);transition:width .25s}
+.msg{min-height:1.5em;color:var(--mute);font-size:.95rem;margin:0}
+details{border-bottom:1px solid var(--line);padding:12px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 0;color:var(--mute)}
+.more a{margin-right:14px;font-weight:600}
+footer{margin:60px 0 40px;color:var(--mute);font-size:.92rem;border-top:1px solid var(--line);padding-top:20px}
+footer a{margin-right:14px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
